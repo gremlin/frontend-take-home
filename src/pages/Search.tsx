@@ -5,6 +5,8 @@ import SearchResults from '../components/SearchResults/SearchResults.tsx';
 import {searchNpmPackages} from '../services/npmService.ts';
 import {NpmPackage} from '../types/npmTypes.ts';
 
+import './Search.scss'
+
 const Search: React.FC = () => {
 
     const [searchResults, setSearchResults] = useState<NpmPackage[]>([]);
@@ -19,7 +21,7 @@ const Search: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="search__container">
             <SearchForm onSearch={handleSearch}/>
             <SearchResults results={searchResults} />
         </div>

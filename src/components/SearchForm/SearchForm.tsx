@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 
+import './SearchForm.scss'
+
 interface SearchFormProps {
     onSearch: (query: string) => void;
 }
 
-const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
+const SearchForm: React.FC<SearchFormProps> = ({onSearch}) => {
     const [query, setQuery] = useState<string>('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -17,15 +19,17 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={query}
-                onChange={handleInputChange}
-                placeholder="Search npm packages"
-            />
-            <button type="submit">Search</button>
-        </form>
+        <div className="search-form__container">
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={query}
+                    onChange={handleInputChange}
+                    placeholder="Search npm packages"
+                />
+                <button type="submit">Search</button>
+            </form>
+        </div>
     );
 }
 

@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer>
-            footer
+            <h6>Brandon Paleczny - Gremlin - Frontend Take Home </h6>
         </footer>
     )
 }
