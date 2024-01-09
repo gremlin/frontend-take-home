@@ -2,6 +2,7 @@ import React from 'react';
 
 import {NpmPackage} from '../../types/npmTypes.ts';
 
+import './SearchResults.scss'
 
 interface SearchResultsProps {
     results: NpmPackage[];
@@ -9,11 +10,11 @@ interface SearchResultsProps {
 
 const SearchResults: React.FC<SearchResultsProps> = ({results}) => {
     return (
-        <div>
+        <div className="search-results__container">
             {results.map((npmPackage: NpmPackage, index: number) =>
-                <div key={index}>
+                <div className="search-result__container" key={index}>
                     <h2>{npmPackage.package.name}</h2>
-                    <h5>{npmPackage.package.description}</h5>
+                    <h5 className="search-result__description">{npmPackage.package.description}</h5>
                 </div>
             )}
         </div>
