@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 
-function SearchForm(): React.JSX.Element {
+interface SearchFormProps {
+    onSearch: (query: string) => void;
+}
+
+const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
     const [query, setQuery] = useState<string>('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -9,6 +13,7 @@ function SearchForm(): React.JSX.Element {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
+        onSearch(query)
     };
 
     return (

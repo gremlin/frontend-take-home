@@ -6,7 +6,7 @@ import Header from '../Header/Header.tsx';
 
 import './Layout.scss'
 
-function Layout(): React.JSX.Element {
+const Layout: React.FC = () => {
 
     return (
         <div className="site-wrapper">

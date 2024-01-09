@@ -2,7 +2,8 @@ import React from 'react';
 
 import './Header.scss';
 
-function Header(): React.JSX.Element {
+const Header: React.FC = () => {
+
     return (
         <header>
             header
