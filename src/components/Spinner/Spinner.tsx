@@ -19,7 +19,7 @@ import './Spinner.scss';
  */
 const Spinner: React.FC = () => {
     return (
-        <div className="spinner__container">
+        <div data-testid="loading-spinner" className="spinner__container">
             <div className="spinner"></div>
         </div>
     );

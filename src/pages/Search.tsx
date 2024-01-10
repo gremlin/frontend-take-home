@@ -44,7 +44,6 @@ const Search: React.FC = () => {
             const response: NpmPackage[] = await searchNpmPackages(query);
             setSearchResults(response);
         } catch (error) {
-            console.error('Search error:', error);
             setError('Failed to fetch search results.');
         } finally {
             setLoading(false)
