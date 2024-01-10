@@ -1,0 +1,44 @@
+.search-form__container {
+  display: flex;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  border: 1px solid black;
+  background: none;
+  font-family: 'Fira Mono', 'Andale Mono', 'Consolas', monospace;
+  font-size: 16px;
+  letter-spacing: 0;
+  outline: unset;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+button {
+  letter-spacing: 0.3px;
+  outline-offset: 3px;
+  z-index: 1;
+  font-weight: bold;
+  background-color: #231f20;
+  color: white;
+  font-size: .875rem;
+  padding: 0.5rem 2rem;
+  border-style: none;
+  border-width: 0;
+  line-height: 1.15;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    transform: scale(0.98);
+  }
+}
