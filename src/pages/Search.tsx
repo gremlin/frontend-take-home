@@ -26,6 +26,7 @@ const Search: React.FC = () => {
 
     const [searchResults, setSearchResults] = useState<NpmPackage[]>([]);
     const [loading, setLoading] = useState<boolean>(false)
+    const [error, setError] = useState<string | null>(null); // State for storing error messages
 
     /**
      * handleSearch - Fetches search results based on the query.
@@ -39,10 +40,12 @@ const Search: React.FC = () => {
     const handleSearch = async (query: string): Promise<void> => {
         try {
             setLoading(true)
+            setError(null);
             const response: NpmPackage[] = await searchNpmPackages(query);
             setSearchResults(response);
         } catch (error) {
             console.error('Search error:', error);
+            setError('Failed to fetch search results.');
         } finally {
             setLoading(false)
         }
@@ -52,7 +55,11 @@ const Search: React.FC = () => {
     return (
         <div className="search__container">
             <SearchForm onSearch={handleSearch}/>
-            { loading ? <Spinner /> : <SearchResults results={searchResults} />}
+            {loading ? <Spinner/> : error ? (
+                <div className="search-error__container">{error}</div>
+            ) : (
+                <SearchResults results={searchResults}/>
+            )}
         </div>
     )
 }
