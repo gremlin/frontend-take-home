@@ -25,7 +25,7 @@ module.exports = {
       'groups': [['builtin', 'external'], 'internal', 'parent', 'sibling', 'index', 'object'],
       'pathGroups': [
         {
-          pattern: 'react*',
+          pattern: 'react*/',
           group: 'external',
           position: 'before'
         },
@@ -35,7 +35,7 @@ module.exports = {
           position: 'after'
         },
       ],
-      'pathGroupsExcludedImportTypes': ['react', 'react-router-dom'],
+      'pathGroupsExcludedImportTypes': ['react', 'react-dom'],
       'newlines-between': 'always',
       'alphabetize': {
         order: 'asc',
