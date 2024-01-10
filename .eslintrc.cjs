@@ -30,12 +30,17 @@ module.exports = {
           position: 'before'
         },
         {
+          'pattern': '@testing-library/**',
+          'group': 'external',
+          'position': 'after'
+        },
+        {
           pattern: '**/*.scss',
           group: 'object',
           position: 'after'
         },
       ],
-      'pathGroupsExcludedImportTypes': ['react', 'react-dom'],
+      'pathGroupsExcludedImportTypes': ['react', 'react-dom', '@testing-library/**'],
       'newlines-between': 'always',
       'alphabetize': {
         order: 'asc',
